@@ -1,0 +1,42 @@
+https://github.com/ArslanDoddamani/help.git
+#include<stdio.h>
+#include<math.h>
+float complete(float,float,int);
+int main(){
+	float a,b,x=0;
+	char ch;
+	int max_iter;
+	printf("The Eq is x^3-2x-5\n");
+	printf("Enter the values in which root lies(a,b)\n");
+	scanf("%f%f",&a,&b);
+	printf("The root lies between (%f,%f)\n",a,b);
+	printf("Enter the number of iteration you want to try for\n");
+	scanf("%d",&max_iter);
+	printf("Do you want detailed solution(y/n): ");
+	scanf("%c",&ch);
+	if (ch=='y')
+		complete(a,b,max_iter);
+	//else
+		//printf("The root is %0.20f",x);
+	return 0;
+ 
+}
+float complete(float a,float b,int max_iter){
+	float x,y;
+	int n=0;
+	printf("Interation\ta\t\tb\t\tx\t\tf(x)\n");
+	 while(n<max_iter){
+		 x=(a+b)/2;
+		 y=pow(x,3)-(2*x)-5;
+		 if(y>=0){
+			 b=x;
+		 }
+		 else{
+			 a=x;
+		 }
+		 n=n+1;
+		 printf("%d\t\t%f\t%f\t%f\t%f\n",n,a,b,x,y);
+	 }
+	 printf("x=%0.20f",x);
+	 return x;
+}
