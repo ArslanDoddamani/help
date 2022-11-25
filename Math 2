@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	int n,i=1;
+	float y,x,y1,a,b;
+	printf("------------Newton Raphon method-----------\n");
+	printf("The equation is (X^3)-(2X)-5\n");
+	printf("The differential equation is (3X^2)-2\n");
+	printf("Enter the iteration :");
+	scanf("%d",&n);
+	printf("Enter the range (a,b)\n");
+	scanf("%f%f",&a,&b);
+	printf("The range is (%f,%f)\n",a,b);
+	x=a;
+	while(i<=n){
+		y=(pow(x,3.0))-(2*x)-(5);
+		y1=(3*pow(x,2))-2;
+		x=x-(y/y1);
+		//printf("x%d = %f\n",i,x);
+		i++;
+	}
+	printf("Ans =%0.20f",x);
+	return 0;
+}
